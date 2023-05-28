@@ -1,0 +1,22 @@
+<a routerLink="add">add</a>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngIf="product &&product.length">
+        <tr *ngFor="let products of product;index as i">
+            <td></td>
+            <td>{{products.name}}</td>
+            <td>{{products.price}}</td>
+            <td>
+                <button (click)="removeProduct(products.id)">xoa</button>
+                <button routerLink="{{products.id}}/edit">edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
